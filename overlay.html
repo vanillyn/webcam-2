@@ -93,7 +93,7 @@
                 transform: translateY(0);
             }
             #music.pau {
-                opacity: 0.38;
+                opacity: 1;
             }
 
             #art-wrap {
@@ -301,12 +301,6 @@
                 }
             }
 
-            .alert-icon {
-                font-size: 28px;
-                line-height: 1;
-                flex-shrink: 0;
-                filter: drop-shadow(0 0 6px var(--r));
-            }
             .alert-body {
                 display: flex;
                 flex-direction: column;
@@ -510,7 +504,6 @@
                 el.className = "alert";
                 el.style.setProperty("--dur", ALERT_DUR + "ms");
                 el.innerHTML = `
-    <span class="alert-icon">${def.icon}</span>
     <div class="alert-body">
       <span class="alert-type">${def.label}</span>
       <span class="alert-msg">${message}</span>

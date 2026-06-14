@@ -568,23 +568,21 @@ func _build_ceiling() -> void:
 
 func _build_walls() -> void:
 	var wc := Color(0.996, 0.957, 0.973)
-
-
 	var wall_mat := _rim_mat(wc, Color(1.0, 0.80, 0.90), 5.0, 0.08)
 
 
 	var bw := MeshInstance3D.new()
 	var bw_mesh := BoxMesh.new(); bw_mesh.size = Vector3(12.0, 8.0, 0.08)
 	bw.mesh = bw_mesh; bw.material_override = wall_mat
-	bw.position = Vector3(0.0, 4.0, -2.5)
+	bw.position = Vector3(0.0, 4.0, 2.5)
 	add_child(bw)
 
 
-	var lw := MeshInstance3D.new()
-	var lw_mesh := BoxMesh.new(); lw_mesh.size = Vector3(0.08, 8.0, 12.0)
-	lw.mesh = lw_mesh; lw.material_override = wall_mat
-	lw.position = Vector3(-4.0, 4.0, -1.0)
-	add_child(lw)
+	var fw := MeshInstance3D.new()
+	var fw_mesh := BoxMesh.new(); fw_mesh.size = Vector3(12.0, 8.0, 0.08)
+	fw.mesh = fw_mesh; fw.material_override = wall_mat
+	fw.position = Vector3(0.0, 4.0, -2.5)
+	add_child(fw)
 
 
 	var rw := MeshInstance3D.new()
@@ -594,16 +592,52 @@ func _build_walls() -> void:
 	add_child(rw)
 
 
+
+
+
+
+
+
+	var lw_bot := MeshInstance3D.new()
+	var lw_bot_mesh := BoxMesh.new(); lw_bot_mesh.size = Vector3(0.08, 0.65, 7.0)
+	lw_bot.mesh = lw_bot_mesh
+	lw_bot.position = Vector3(-4.0, 0.325, 1.0)
+	add_child(lw_bot)
+
+
+	var lw_top := MeshInstance3D.new()
+	var lw_top_mesh := BoxMesh.new(); lw_top_mesh.size = Vector3(0.08, 5.25, 7.0)
+	lw_top.mesh = lw_top_mesh
+	lw_top.position = Vector3(-4.0, 5.375, 1.0)
+	add_child(lw_top)
+
+
+	var lw_left := MeshInstance3D.new()
+	var lw_left_mesh := BoxMesh.new(); lw_left_mesh.size = Vector3(0.08, 2.2, 2.3)
+	lw_left.mesh = lw_left_mesh; lw_left.material_override = wall_mat
+	lw_left.position = Vector3(-4.0, 1.7, -1.35)
+	add_child(lw_left)
+
+
+	var lw_right := MeshInstance3D.new()
+	var lw_right_mesh := BoxMesh.new(); lw_right_mesh.size = Vector3(0.08, 2.2, 1.1)
+	lw_right.mesh = lw_right_mesh; lw_right.material_override = wall_mat
+	lw_right.position = Vector3(-4.0, 1.7, 1.95)
+	add_child(lw_right)
+
+
 func _build_molding() -> void:
 	var mol := Color(1.0, 0.941, 0.969)
 
 	_box(Vector3(12.0, 0.12, 0.12), mol, Vector3(0.0, 3.94, 2.5))
+	_box(Vector3(12.0, 0.12, 0.12), mol, Vector3(0.0, 3.94, -2.5))
 	_box(Vector3(0.12, 0.12, 12.0), mol, Vector3(-4.0, 3.94, -1.0))
 	_box(Vector3(0.12, 0.12, 12.0), mol, Vector3(4.0, 3.94, -1.0))
 
 	var bc := Color(1.0, 0.910, 0.941)
 
 	_box(Vector3(12.0, 0.10, 0.08), bc, Vector3(0.0, 0.05, 2.44))
+	_box(Vector3(12.0, 0.10, 0.08), bc, Vector3(0.0, 0.05, -2.44))
 	_box(Vector3(0.08, 0.10, 12.0), bc, Vector3(-3.95, 0.05, -1.0))
 	_box(Vector3(0.08, 0.10, 12.0), bc, Vector3(3.95, 0.05, -1.0))
 
@@ -619,34 +653,28 @@ func _build_window() -> void:
 	var fc := Color(1.0, 0.957, 0.973)
 
 
-
-	_box(Vector3(0.1, 2.2, 1.6), fc, Vector3(-4.0, 1.7, 0.6))
-
-
 	var glass_mi   := MeshInstance3D.new()
 	var glass_mesh := BoxMesh.new()
 	glass_mesh.size = Vector3(0.04, 1.88, 1.36)
 	glass_mi.mesh = glass_mesh
 	var gmat := StandardMaterial3D.new()
-	gmat.albedo_color = Color(1.0, 0.973, 0.941, 0.45)
+	gmat.albedo_color = Color(0.85, 0.95, 1.0, 0.35)
 	gmat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	gmat.cull_mode    = BaseMaterial3D.CULL_DISABLED
 	glass_mi.material_override = gmat
-	glass_mi.position = Vector3(-3.95, 1.7, 0.6)
+	glass_mi.position = Vector3(-3.96, 1.7, 0.6)
 	add_child(glass_mi)
 
 
-	_box(Vector3(0.055, 1.88, 0.05), fc, Vector3(-3.96, 1.7, 0.6))
-	_box(Vector3(0.055, 0.05, 1.36), fc, Vector3(-3.96, 1.7, 0.6))
+	_box(Vector3(0.055, 1.88, 0.05), fc, Vector3(-3.97, 1.7, 0.6))
+	_box(Vector3(0.055, 0.05, 1.36), fc, Vector3(-3.97, 1.7, 0.6))
 
 
-	var og := _point(Color(1.0, 0.973, 0.878), 1.2, 3.5,
-		Vector3(-4.5, 1.7, 0.6))
+	var og := _point(Color(1.0, 0.973, 0.878), 1.2, 3.5, Vector3(-4.5, 1.7, 0.6))
 	og.name = "OutsideGlow"
 
 
-	_box(Vector3(0.05, 0.05, 1.9), Color(0.784, 0.627, 0.706),
-		Vector3(-3.88, 2.88, 0.6))
+	_box(Vector3(0.05, 0.05, 1.9), Color(0.784, 0.627, 0.706), Vector3(-3.88, 2.88, 0.6))
 
 
 func _build_curtains() -> void:

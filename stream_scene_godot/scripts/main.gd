@@ -110,16 +110,3 @@ func _process(delta: float) -> void:
 	)
 
 	_cam_look_mouse = _cam_look_mouse.lerp(norm_mouse * 0.6, delta * 1.2)
-
-
-	camera.position = CAM_BASE_POS + Vector3(drift_x, drift_y, 0.0)
-
-
-
-
-
-	camera.rotation_degrees = Vector3(
-		 6.85 + _cam_look_mouse.y * 0.3,
-				_cam_look_mouse.x * -0.4,
-		 0.0
-	)
