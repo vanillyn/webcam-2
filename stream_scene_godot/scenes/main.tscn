@@ -19,10 +19,11 @@ script = ExtResource("2_streamd")
 script = ExtResource("6_room")
 
 [node name="CharacterRoot" type="Node3D" parent="World" unique_id=2024858613]
+transform = Transform3D(-0.99927026, 0, -0.038196005, 0, 1, 0, 0.038196005, 0, -0.99927026, 0, -0.265, 0.385)
 script = ExtResource("3_char")
 
 [node name="ChatSpawner" type="Node3D" parent="World" unique_id=1965415678]
-transform = Transform3D(-0.8967338, 0, -0.4425704, 0, 1, 0, 0.4425704, 0, -0.8967338, 0, 0, 0)
+transform = Transform3D(0.42419943, -0.45215935, 0.78460616, 0, 0.8664236, 0.49930975, -0.90556884, -0.21180691, 0.3675364, 0.911, 1.981, 0.575)
 script = ExtResource("4_chat")
 
 [node name="ThrowManager" type="Node3D" parent="World" unique_id=1290850449]
@@ -31,7 +32,6 @@ script = ExtResource("5_throw")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1502268263]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1887274740]
-transform = Transform3D(-0.9998898, -0.0003768152, 0.014841799, 0, 0.9996779, 0.025380604, -0.014846582, 0.025377806, -0.9995677, -0.1352897, 1.9119945, -2.4226544)
+transform = Transform3D(-0.8156308, -0.14685962, 0.5596237, 0, 0.9672486, 0.25383085, -0.57857275, 0.20703226, -0.7889178, 0.9909273, 1.8739514, -0.46835232)
 current = true
-fov = 67.3
 far = 40.0
