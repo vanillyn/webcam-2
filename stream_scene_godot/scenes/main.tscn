@@ -7,29 +7,29 @@
 [ext_resource type="Script" uid="uid://265ax7brijxp" path="res://scripts/throw_manager.gd" id="5_throw"]
 [ext_resource type="Script" uid="uid://bojfnb627kojp" path="res://scripts/room_builder.gd" id="6_room"]
 
-[node name="Main" type="Node3D" unique_id=1319480532]
+[node name="Main" type="Node3D" unique_id=445004378]
 script = ExtResource("1_main")
 
-[node name="StreamdClient" type="Node" parent="." unique_id=37986487]
+[node name="StreamdClient" type="Node" parent="." unique_id=1506863262]
 script = ExtResource("2_streamd")
 
-[node name="World" type="Node3D" parent="." unique_id=1894327960]
+[node name="World" type="Node3D" parent="." unique_id=878263061]
 
-[node name="RoomBuilder" type="Node3D" parent="World" unique_id=2031152394]
+[node name="RoomBuilder" type="Node3D" parent="World" unique_id=2119006444]
 script = ExtResource("6_room")
 
-[node name="CharacterRoot" type="Node3D" parent="World" unique_id=1993647206]
+[node name="CharacterRoot" type="Node3D" parent="World" unique_id=2024858613]
 script = ExtResource("3_char")
 
-[node name="ChatSpawner" type="Node3D" parent="World" unique_id=1522821302]
+[node name="ChatSpawner" type="Node3D" parent="World" unique_id=1965415678]
 script = ExtResource("4_chat")
 
-[node name="ThrowManager" type="Node3D" parent="World" unique_id=1758482583]
+[node name="ThrowManager" type="Node3D" parent="World" unique_id=1290850449]
 script = ExtResource("5_throw")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2068859373]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1502268263]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1510796365]
-transform = Transform3D(1, 0, 0, 0, 0.98, -0.18, 0, 0.18, 0.98, 0, 1.55, 2.8)
-fov = 52.0
+[node name="Camera3D" type="Camera3D" parent="." unique_id=944325306]
+transform = Transform3D(1, 0, 0, 0, 0.9929, -0.1193, 0, 0.1193, 0.9929, 0, 1.58, -4)
+fov = 54.0
 far = 40.0
